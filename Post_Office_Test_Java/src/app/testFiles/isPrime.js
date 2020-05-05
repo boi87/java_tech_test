@@ -15,5 +15,4 @@ const isPrime = (num) => {
     }
 };
 
-
 isPrime(12);
