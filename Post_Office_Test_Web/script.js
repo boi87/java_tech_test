@@ -31,6 +31,12 @@ function runOperations(numOne, numTwo, operator) {
                 case "-":
                     answer = numOne - numTwo;
                     break;
+                case "*":
+                    answer = numOne * numTwo;
+                    break;
+                case "/":
+                    answer = numOne / numTwo;
+                    break;
             }
             resolve(answer)
         } catch (err) {
@@ -54,8 +60,6 @@ function gatherData(dataString) {
                 }
             }
             parsedData.numbers = [...dataArr].map(x => +x);
-            // console.log(dataArr);
-
             resolve(parsedData);
         } catch (err) {
             reject(err);
