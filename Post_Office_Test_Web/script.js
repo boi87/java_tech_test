@@ -7,8 +7,8 @@ function evaluateData() {
     dataString = dataString.replace(/\s/g, "");
     // console.log(dataString);
     gatherData(dataString).then((parsedData) => {
-        console.log(parsedData);
-        runOperations(parsedData.numbers[0], parsedData.numbers[1], parsedData.operator).then((answer) => {
+        // console.log(parsedData);
+        runOperations(parsedData.numbers, parsedData.operator).then((answer) => {
             showBox.textContent = answer;
         })
     }).catch((err) => console.log(err))
@@ -18,34 +18,40 @@ function addToShowBox(input) {
     let showBox = document.getElementById("showBox");
     switch (input) {
         case 'undo':
-			showBox.innerHTML = showBox.innerHTML.substring(0, showBox.innerHTML.length - 1);
+            showBox.innerHTML = showBox.innerHTML.substring(0, showBox.innerHTML.length - 1);
             break;
-		case 'clear':
-			showBox.innerHTML = '';
-			break;
-		default: showBox.innerHTML += input;
+        case 'clear':
+            showBox.innerHTML = '';
+            break;
+        default:
+            showBox.innerHTML += input;
     }
 }
 
-function runOperations(numOne, numTwo, operator) {
+function runOperations(numbers, operators) {
+    let answer = 0;
+    for (let i = 0; i < operators.length; i++) {
+        if (i === 0) {
+            answer = numbers[i];
+        }
+        switch (operators[i]) {
+            case "+":
+                answer += numbers[i + 1];
+                break;
+            case "-":
+                answer -= numbers[i + 1];
+                break;
+            case "*":
+                answer *= numbers[i + 1];
+                break;
+            case "/":
+                answer /= numbers[i + 1];
+                break;
+        }
+    }
     return new Promise((resolve, reject) => {
         try {
-            let answer = 0;
-            switch (operator) {
-                case "+":
-                    answer = numOne + numTwo;
-                    break;
-                case "-":
-                    answer = numOne - numTwo;
-                    break;
-                case "*":
-                    answer = numOne * numTwo;
-                    break;
-                case "/":
-                    answer = numOne / numTwo;
-                    break;
-            }
-            resolve(answer)
+            resolve(answer);
         } catch (err) {
             reject(err);
         }
@@ -57,16 +63,18 @@ function gatherData(dataString) {
         try {
             let parsedData = {
                 numbers: [],
-                operator: ''
+                operator: []
             };
-            let dataArr = [];
-            for (let i = 0; i < dataString.length; i++) {
-                if (isNaN(dataString.charAt(i))) {
-                    parsedData.operator = dataString.charAt(i);
-                    dataArr = dataString.split(dataString.charAt(i));
-                }
-            }
-            parsedData.numbers = dataArr.map(x => +x);
+            // filter operators
+            parsedData.operator = dataString.split('').filter(x => isNaN(x));
+
+            // filter numbers
+            parsedData.numbers =
+                dataString
+                    .replace(/[^0-9]/g, ' ')
+                    .split(' ')
+                    .map(x => parseInt(x));
+
             resolve(parsedData);
         } catch (err) {
             reject(err);
