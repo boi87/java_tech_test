@@ -6,14 +6,23 @@
 	background-color: black;
 	padding: 5px;
 	box-shadow: 4px 5px #888888;
+	border-radius: 3px;
 }
 
+/*showBox*/
 .showBoxDiv{
-	width: 100%;
+	width: 95%;
+	margin: -10px auto 10px auto;
 	height: 30px;
 	background-color: white;
-	margin-bottom: 5px;
 }
+
+.showBox {
+	font-family: 'Courier New';
+	padding: 3px 0px 0px 10px;
+	font-size: 20px;
+}
+
 
 .buttonsContainer {
 	display: flex;
@@ -25,12 +34,13 @@
 	flex-direction: column;
 }
 
-.numberRow {
-	display: flex;
-}
 .opsButtonsContainer {
 	display: flex;
 	flex-direction: column;
+}
+
+.numberRow {
+	display: flex;
 }
 
 .evaluateContainer {
@@ -39,20 +49,40 @@
 	justify-content: space-between;
 }
 
+.logoContainer {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+}
+
 .title {
 	color: white;
 	text-align: center;
 	font-family: monospace;
 	padding: 3px;
-	font-size: 11px;
+	font-size: 10px;
 }
+
+.logo {
+	max-width: 40px;
+}
+
+/*singular buttons */
 .numberBox {
 	width: 30px;
 	height: 30px;
 	margin: 2px;
 	border-radius: 3px;
 	cursor: pointer;
+}
 
+.opsBox {
+	width: 30px;
+	height: 30px;
+	margin: 2px;
+	border-radius: 3px;
+	cursor: pointer;
+	background-color: orange;
 }
 
 .largeNumberBox {

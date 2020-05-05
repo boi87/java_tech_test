@@ -5,7 +5,8 @@
 </head>
 <body>
 <div class="calculator">
-    <div class="showBoxDiv" id="showBox">
+    <div class="showBoxDiv">
+        <p class="showBox" id="showBox"></p>
     </div>
     <div class="buttonsContainer">
         <div class="numberButtonsContainer">
@@ -45,32 +46,35 @@
             <div class="numberRow">
 
                 <div>
-                    <button class="numberBox" id="undo" onclick="addToShowBox('undo')"><</button>
+                    <button class="opsBox" id="undo" onclick="addToShowBox('undo')"><</button>
                 </div>
                 <div>
                     <button class="numberBox" id="zero" onclick="addToShowBox('0')">0</button>
                 </div>
                 <div>
-                    <button class="numberBox" id="clear" onclick="addToShowBox('clear')">C</button>
+                    <button class="opsBox" id="clear" onclick="addToShowBox('clear')">C</button>
                 </div>
             </div>
         </div>
         <div class="opsButtonsContainer">
             <div>
-                <button class="numberBox" id="add" onclick="addToShowBox('+')">+</button>
+                <button class="opsBox" id="add" onclick="addToShowBox('+')">+</button>
             </div>
             <div>
-                <button class="numberBox" id="subtract" onclick="addToShowBox('-')">-</button>
+                <button class="opsBox" id="subtract" onclick="addToShowBox('-')">-</button>
             </div>
             <div>
-                <button class="numberBox" id="multiply" onclick="addToShowBox('*')">*</button>
+                <button class="opsBox" id="multiply" onclick="addToShowBox('*')">*</button>
             </div>
             <div>
-                <button class="numberBox" id="divide" onclick="addToShowBox('/')">/</button>
+                <button class="opsBox" id="divide" onclick="addToShowBox('/')">/</button>
             </div>
         </div>
         <div class="evaluateContainer">
-            <p class="title" style="white-space: normal">Post Office Calculator 2.0</p>
+            <div class="logoContainer">
+                <p class="title" style="white-space: normal">Post Office Calculator 2.0</p>
+                <img class='logo' src="https://pluspng.com/img-png/post-office-png-hd-file-post-office-logo-svg-1280.png" alt="post-office-logo">
+            </div>
             <button class="largeNumberBox" id="evaluate" onclick="evaluateData()">=</button>
         </div>
     </div>

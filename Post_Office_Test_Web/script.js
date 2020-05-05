@@ -18,7 +18,7 @@ function addToShowBox(input) {
     let showBox = document.getElementById("showBox");
     switch (input) {
         case 'undo':
-			showBox.innerHTML = showBox.innerHTML.substring(0, showBox.innerHTML.length - 1);;
+			showBox.innerHTML = showBox.innerHTML.substring(0, showBox.innerHTML.length - 1);
             break;
 		case 'clear':
 			showBox.innerHTML = '';
@@ -66,7 +66,7 @@ function gatherData(dataString) {
                     dataArr = dataString.split(dataString.charAt(i));
                 }
             }
-            parsedData.numbers = [...dataArr].map(x => +x);
+            parsedData.numbers = dataArr.map(x => +x);
             resolve(parsedData);
         } catch (err) {
             reject(err);
