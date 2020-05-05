@@ -5,9 +5,7 @@ function evaluateData() {
     let dataString = showBox.innerHTML;
 
     dataString = dataString.replace(/\s/g, "");
-    // console.log(dataString);
     gatherData(dataString).then((parsedData) => {
-        // console.log(parsedData);
         runOperations(parsedData.numbers, parsedData.operator).then((answer) => {
             showBox.textContent = answer;
         })
