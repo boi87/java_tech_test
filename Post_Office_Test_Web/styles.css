@@ -1,5 +1,5 @@
 .calculator{
-	height: 300px;
+	height: auto;
 	width: 200px;
 	border: 3px;
 	border-color: black;
@@ -14,8 +14,52 @@
 	margin-bottom: 5px;
 }
 
-.number{
+.buttonsContainer {
+	display: flex;
+	justify-content: space-between;
+}
+
+.numberButtonsContainer {
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.numberRow {
+	display: flex;
+}
+.opsButtonsContainer {
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.evaluateContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.title {
+	color: white;
+	text-align: center;
+	font-family: monospace;
+	padding: 3px;
+	font-size: 11px;
+}
+.numberBox {
 	width: 30px;
 	height: 30px;
 	margin: 2px;
+	border-radius: 3px;
+
+}
+
+.largeNumberBox {
+	width: 50px;
+	height: 30px;
+	border-radius: 3px;
+	margin: 2px;
+	background-color: red;
+	align-self: center;
 }
