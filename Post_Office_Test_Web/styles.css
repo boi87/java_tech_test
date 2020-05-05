@@ -5,6 +5,7 @@
 	border-color: black;
 	background-color: black;
 	padding: 5px;
+	box-shadow: 4px 5px #888888;
 }
 
 .showBoxDiv{
@@ -22,7 +23,6 @@
 .numberButtonsContainer {
 	display: flex;
 	flex-direction: column;
-	cursor: pointer;
 }
 
 .numberRow {
@@ -31,7 +31,6 @@
 .opsButtonsContainer {
 	display: flex;
 	flex-direction: column;
-	cursor: pointer;
 }
 
 .evaluateContainer {
@@ -52,6 +51,7 @@
 	height: 30px;
 	margin: 2px;
 	border-radius: 3px;
+	cursor: pointer;
 
 }
 
