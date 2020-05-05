@@ -16,8 +16,15 @@ function evaluateData() {
 
 function addToShowBox(input) {
     let showBox = document.getElementById("showBox");
-    showBox.innerHTML += input;
-    return;
+    switch (input) {
+        case 'undo':
+			showBox.innerHTML = showBox.innerHTML.substring(0, showBox.innerHTML.length - 1);;
+            break;
+		case 'clear':
+			showBox.innerHTML = '';
+			break;
+		default: showBox.innerHTML += input;
+    }
 }
 
 function runOperations(numOne, numTwo, operator) {
