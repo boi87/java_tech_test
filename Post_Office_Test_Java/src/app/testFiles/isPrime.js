@@ -16,3 +16,5 @@ const isPrime = (num) => {
 };
 
 isPrime(12);
+
+module.exports = isPrime;

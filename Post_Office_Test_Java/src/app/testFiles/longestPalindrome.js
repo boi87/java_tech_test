@@ -12,4 +12,6 @@ const longestPalindrome = (string) => {
     return palindromes[0];
 };
 
-longestPalindrome('anna kayak mom racecar sagas');
+// longestPalindrome('anna kayak mom racecar sagas');
+
+module.exports = longestPalindrome;

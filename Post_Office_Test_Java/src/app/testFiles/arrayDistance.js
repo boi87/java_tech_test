@@ -17,3 +17,5 @@ const arrayDistance = (arr) => {
 };
 
 arrayDistance([4, 56, 34, 66]);
+
+module.exports = arrayDistance;
